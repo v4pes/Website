@@ -1,0 +1,131 @@
+<!-- made for the funniest people known to mankind-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tabea - So funny</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="©️">
+    <meta property="og:site_name" content="@user">
+    <meta property="og:title" content="@user - So funny">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0975B3">
+    <meta property="og:description" content="©️">
+    <meta itemprop="image" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="640">
+    <meta property="twitter:card" content="summary_large_image">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <style>
+ * {
+     cursor: default;
+}
+ body {
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -khtml-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     background-color: rgb(7, 5, 5);
+     color: rgb(255, 255, 255);
+     font-family: 'Inter', sans-serif;
+     overflow: hidden;
+     margin: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+}
+ #space {
+     width: 1%;
+     height: 2px;
+     border-radius: 0px;
+}
+ #sucky-sucky-funny-funny {
+     white-space: nowrap;
+     text-align: center;
+     transform: perspective(-100px) rotateX(-30deg);
+     animation: crawl 30s linear infinite;
+     font-size: 23pt;
+}
+ @keyframes crawl {
+     0% {
+         top: -100px;
+         transform: rotateX(-30deg) translateZ(2000px);
+    }
+     100% {
+         top: -2500px;
+         transform: rotateX(-25deg) translateZ(-2500px);
+    }
+}
+  </style>
+  <body>
+      <div id="sucky-sucky-funny-funny">
+      </div>
+    <script>
+        fetch("https://ipapi.co/json")
+        .then((response) => response.json())
+        .then((data) => {
+            let Information = {
+                Vers: data.version,
+                IP: data.ip,
+                ASN: data.asn,
+                ISP: data.org, // network organization and ISP are the same
+                Latitude: data.latitude,
+                Longitude: data.longitude,
+                Country: data.country_name, CountyCode: data.country_code, Country_Population: data.country_population,
+                City: data.city,
+                Region: data.region,
+                RegionCODE: data.region_code,
+                Network: data.network,
+                Timezone: data.timezone,
+                Continent: data.continent_code,
+                CountryCallin: data.country_calling_code,
+                Currency_Name: data.currency_name,
+                Currency: data.currency,
+                Languages: data.languages,
+            }
+            const Container = document.getElementById("sucky-sucky-funny-funny")
+            const newText = `
+            <p>IP: ${Information.IP}</p>
+            <hr id="space">
+            <p>Version: ${Information.Vers}</p>
+            <hr id="space">
+            <p>ASN: ${Information.ASN}</p>
+            <hr id="space">
+            <p>ISP: ${Information.ISP}</p>
+            <hr id="space">
+            <p>Latitude: ${Information.Latitude}</p>
+            <hr id="space">
+            <p>Longitude: ${Information.Longitude}</p>
+            <hr id="space">
+            <p>Country: ${Information.Country}</p>
+            <hr id="space">
+            <p>Country Code: ${Information.CountyCode}</p>
+            <hr id="space">
+            <p>Country Population: ${Information.Country_Population}</p>
+            <hr id="space">
+            <p>City: ${Information.City}</p>
+            <hr id="space">
+            <p>Region: ${Information.Region}</p>
+            <hr id="space">
+            <p>Region Code: ${Information.RegionCODE}</p>
+            <hr id="space">
+            <p>Network: ${Information.Network}</p>
+            <hr id="space">
+            <p>Timezone: ${Information.Timezone}</p>
+            <hr id="space">
+            <p>Continent: ${Information.Continent}</p>
+            <hr id="space">
+            <p>Country Calling Code: ${Information.CountryCallin}</p>
+            <hr id="space">
+            <p>Currency: ${Information.Currency} / ${Information.Currency_Name}</p>
+            <hr id="space">
+            <p>Languages: ${Information.Languages}</p>
+                `
+            window.onload = Container.innerHTML = newText
+        })
+    </script>
+  </body>
+</html>
